@@ -17,11 +17,12 @@
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#programs">Programs</a>
       <a href="#approach">Our approach</a>
+      <a href="#youtube">YouTube</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-actions">
       <a class="employee-link" href="https://drive4pro4tv-driving-school.ogundejiadeola0.chatgpt.site/" rel="noopener">Employee access</a>
-      <a class="button button-red button-small" href="#programs">Explore lessons <span aria-hidden="true">→</span></a>
+      <button class="button button-red button-small" type="button" data-book-program="first-time">Book a lesson</button>
     </div>
     <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -29,7 +30,9 @@
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <a href="#programs">Programs</a>
       <a href="#approach">Our approach</a>
+      <a href="#youtube">YouTube</a>
       <a href="#contact">Contact</a>
+      <button class="mobile-book" type="button" data-book-program="first-time">Book a lesson</button>
       <a class="mobile-employee" href="https://drive4pro4tv-driving-school.ogundejiadeola0.chatgpt.site/" rel="noopener">Employee access</a>
     </nav>
   </header>
@@ -42,8 +45,8 @@
         <h1>Learn with<br>precision.<br><em>Drive with confidence.</em></h1>
         <p class="hero-intro">Patient instruction, practical road experience, and a clear plan built around the driver you want to become.</p>
         <div class="hero-actions">
-          <a class="button button-red" href="#programs">Find your program <span aria-hidden="true">→</span></a>
-          <a class="button button-light" href="#approach">How training works</a>
+          <button class="button button-red" type="button" data-book-program="first-time">Book your lesson</button>
+          <a class="button button-light" href="#programs">View programs and prices</a>
         </div>
       </div>
 
@@ -80,15 +83,15 @@
       <div class="program-grid">
         <article class="program-card reveal">
           <div class="card-top"><span>01</span><span class="program-icon">▰</span></div>
-          <div><h3>First-time drivers</h3><p>A calm, structured path from first lesson to confident everyday driving.</p><a href="#contact">Program details <span>→</span></a></div>
+          <div><div class="price-row"><strong>$85</strong><span>60 minutes</span></div><h3>First-time drivers</h3><p>A calm, structured path from first lesson to confident everyday driving.</p><button class="program-book" type="button" data-book-program="first-time">Book this program</button></div>
         </article>
         <article class="program-card dark reveal">
           <div class="card-top"><span>02</span><span class="program-icon">⌁</span></div>
-          <div><h3>Road test preparation</h3><p>Focused practice on the skills, routes, and decisions that matter on test day.</p><a href="#contact">Program details <span>→</span></a></div>
+          <div><div class="price-row"><strong>$120</strong><span>90 minutes</span></div><h3>Road test preparation</h3><p>Focused practice on the skills, routes, and decisions that matter on test day.</p><button class="program-book" type="button" data-book-program="road-test">Book this program</button></div>
         </article>
         <article class="program-card reveal">
           <div class="card-top"><span>03</span><span class="program-icon">◴</span></div>
-          <div><h3>Refresher lessons</h3><p>Personal coaching for drivers returning to the road or building new confidence.</p><a href="#contact">Program details <span>→</span></a></div>
+          <div><div class="price-row"><strong>$80</strong><span>60 minutes</span></div><h3>Refresher lessons</h3><p>Personal coaching for drivers returning to the road or building new confidence.</p><button class="program-book" type="button" data-book-program="refresher">Book this program</button></div>
         </article>
       </div>
     </section>
@@ -107,16 +110,41 @@
       </div>
     </section>
 
+    <section class="youtube-section" id="youtube">
+      <div class="youtube-copy reveal"><span class="play-badge">▶</span><div><p>Drive4Pro4TV on YouTube</p><h2>Watch. Learn. Arrive prepared.</h2><span>Explore driving-school videos, road guidance, and practical lessons from the Drive4Pro4TV channel.</span></div></div>
+      <a class="button button-red" href="https://www.youtube.com/@drive4pro4tv" target="_blank" rel="noopener noreferrer">Visit YouTube channel</a>
+    </section>
+
     <section class="contact" id="contact">
-      <div class="reveal"><p>Contact section reserved</p><h2>Ready when your contact details are.</h2></div>
-      <aside class="reveal"><strong>Coming next</strong><p>Phone, email, service area, and preferred booking method can be added here as soon as they are available.</p></aside>
+      <div class="reveal"><p>Ready to get started?</p><h2>Your next lesson is one request away.</h2></div>
+      <aside class="reveal"><strong>Choose a program and preferred time.</strong><p>The school will receive the details and contact you to confirm availability.</p><button class="button contact-book" type="button" data-book-program="first-time">Book a lesson</button></aside>
     </section>
   </main>
 
   <footer>
     <div><strong>Drive<span>4</span>Pro<span>4TV</span></strong><small>Excellence in perfection</small></div>
-    <a href="https://drive4pro4tv-driving-school.ogundejiadeola0.chatgpt.site/" rel="noopener">Employee access <span aria-hidden="true">↗</span></a>
+    <div class="footer-links"><a href="https://www.youtube.com/@drive4pro4tv" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://drive4pro4tv-driving-school.ogundejiadeola0.chatgpt.site/" rel="noopener">Employee access <span aria-hidden="true">↗</span></a></div>
   </footer>
+
+  <div class="booking-modal" aria-hidden="true">
+    <div class="booking-backdrop" data-close-booking></div>
+    <section class="booking-panel" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+      <header><div><p>Book a lesson</p><h2 id="booking-title">Choose your road forward.</h2></div><button type="button" data-close-booking aria-label="Close booking form">×</button></header>
+      <div class="booking-success" hidden><span>✓</span><h3>Appointment request received.</h3><p>Your request has been saved. Drive4Pro4TV will contact you to confirm the requested time.</p><small></small><button class="button button-red" type="button" data-close-booking>Done</button></div>
+      <form class="booking-form">
+        <label class="full"><span>Program</span><select name="programId" required><option value="first-time">First-time drivers — $85</option><option value="road-test">Road test preparation — $120</option><option value="refresher">Refresher lessons — $80</option></select></label>
+        <div class="booking-price full"><span data-book-duration>60-minute session</span><strong data-book-price>$85</strong></div>
+        <label><span>Full name</span><input name="customerName" autocomplete="name" required minlength="2" maxlength="100"></label>
+        <label><span>Email address</span><input name="customerEmail" type="email" autocomplete="email" required></label>
+        <label><span>Phone number</span><input name="customerPhone" type="tel" autocomplete="tel" required minlength="7" maxlength="40"></label>
+        <label><span>Preferred date and time</span><input name="appointmentStart" type="datetime-local" required></label>
+        <label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <label class="full"><span>Notes <em>(optional)</em></span><textarea name="notes" maxlength="1000" rows="3" placeholder="Tell us about your experience level or anything we should know."></textarea></label>
+        <p class="booking-error full" role="alert" hidden></p>
+        <div class="booking-submit full"><p>The school will confirm availability.</p><button class="button button-red" type="submit">Request appointment</button></div>
+      </form>
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
